@@ -13,10 +13,15 @@ export default function App() {
   return (
     <ThemeProvider theme={Theme}>
       <NavigationContainer>
-        <Tab.Navigator tabBar={(props) => <BottomNav {...props} />}>
-          <Tab.Screen name="Home" component={Main} />
+        <Tab.Navigator
+          screenOptions={{
+            headerShown: false,
+            tabBar: (props) => <BottomNav {...props} />,
+          }}
+        >
           <Tab.Screen name="Inventory" component={Main} />
           <Tab.Screen name="Payment" component={Main} />
+          <Tab.Screen name="Home" component={Main} />
           <Tab.Screen name="Store" component={Main} />
           <Tab.Screen name="Menu" component={Main} />
         </Tab.Navigator>
